@@ -17,11 +17,9 @@ function setup() {
 }
 
 function draw() {
-  background(0)
-  
   for (var i=0; i<100; i++) {
    noStroke()
-   fill(255)
+   noFill()
    ellipse(x[i],y[i],25,25)
    x[i] = x[i] + random(-5,5)
    y[i] = y[i] + random(-5,5)
@@ -30,7 +28,7 @@ function draw() {
   
   for (var i2=0; i2<50; i2++) {
    noStroke()
-   fill(255)
+   noFill()
    ellipse(x[i2],y[i2],50,50)
    x[i2] = x[i2] + random(-5,5)
    y[i2] = y[i2] + random(-5,5)
@@ -39,7 +37,7 @@ function draw() {
 
 for (var i3=0; i3<25; i3++) {
    noStroke()
-   fill(255)
+   noFill()
    ellipse(x[i3],y[i3],100,100)
    x[i3] = x[i3] + random(-5,5)
    y[i3] = y[i3] + random(-5,5)
@@ -59,12 +57,12 @@ for (var i3=0; i3<25; i3++) {
 //draws line between coordinates defined by i and coordinates defined by j
     }
     
-    for (var j2=0; j2<100; j2++) {
+    for (var j2=0; j2<50; j2++) {
 //find distance between center points of other circles
     
-    var distance2 = dist(x[i],y[i],x[j2],y[j2])
+     var distance2 = dist(x[i2],y[i2],x[j2],y[j2])
   
-    if (distance2 < 50) {
+     if (distance2 < 50) {
       stroke(random(0,255),random(0,255),random(0,255),random(0,255))
       line(x[i2],y[i2],x[j2],y[j2])
     }
@@ -72,12 +70,12 @@ for (var i3=0; i3<25; i3++) {
     
     for (var j3=0; j3<100; j3++) {
 
-    var distance3 = dist(x[i3],y[i3],x[j3],y[j3])
+      var distance3 = dist(x[i3],y[i3],x[j3],y[j3])
     
       if (distance3 < 100) {
       stroke(random(0,255),random(0,255),random(0,255),random(0,255))
       line(x[i3],y[i3],x[j3],y[j3])
     }
-  //draws line between coordinates defined by i and coordinates defined by j
+//draws line between coordinates defined by i and coordinates defined by j
     }
 }
