@@ -3,7 +3,7 @@ var y = []
 
 function setup() {
   createCanvas (800,800)
-  
+
   for (var i=0; i<50; i++) {
 //first position sets start number of loops for i
 //second position tells maximum number of loops
@@ -19,8 +19,8 @@ function setup() {
 function draw() {
   for (var i=0; i<50; i++) {
    noStroke()
+
    noFill()
-   ellipse(x[i],y[i],25,25)
    x[i] = x[i] + random(-5,5)
    y[i] = y[i] + random(-5,5)
 //draws small circles
@@ -28,7 +28,7 @@ function draw() {
   
   for (var i2=0; i2<25; i2++) {
    noStroke()
-   noFill()
+    noFill()
    ellipse(x[i2],y[i2],50,50)
    x[i2] = x[i2] + random(-5,5)
    y[i2] = y[i2] + random(-5,5)
@@ -37,7 +37,7 @@ function draw() {
 
 for (var i3=0; i3<12; i3++) {
    noStroke()
-   noFill()
+    noFill()
    ellipse(x[i3],y[i3],100,100)
    x[i3] = x[i3] + random(-5,5)
    y[i3] = y[i3] + random(-5,5)
