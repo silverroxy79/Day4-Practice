@@ -21,50 +21,52 @@ function draw() {
   
   for (var i=0; i<100; i++) {
    noStroke()
-   fill(0)
+   fill(255)
    ellipse(x[i],y[i],25,25)
+   x[i] = x[i] + random(-5,5)
+   y[i] = y[i] + random(-5,5)
 //draws small circles
 }
   
-  for (var i2=0; i<100; i++) {
+  for (var i2=0; i2<50; i2++) {
    noStroke()
-   fill(0)
-   ellipse(x[i2],y[i3],50,50)
+   fill(255)
+   ellipse(x[i2],y[i2],50,50)
+   x[i2] = x[i2] + random(-5,5)
+   y[i2] = y[i2] + random(-5,5)
 //draws medium circles
 }
 
-for (var i3=0; i<100; i++) {
+for (var i3=0; i3<25; i3++) {
    noStroke()
-   fill(0)
+   fill(255)
    ellipse(x[i3],y[i3],100,100)
+   x[i3] = x[i3] + random(-5,5)
+   y[i3] = y[i3] + random(-5,5)
 //draws large circles
 }
 
-  x[i] = x[i] + random(-5,5)
-  y[i] = y[i] + random(-5,5)
-//assigns random movements between -5 and 5 pixels along x and y
-
-  for (var j=0; j<200; j++) {
+  for (var j=0; j<100; j++) {
 //find distance between center points of other circles
     
     var distance = dist(x[i],y[i],x[j],y[j])
+    var distance2 = dist(x[i2],y[i2],x[j],y[j])
+    var distance3 = dist(x[i3],y[i3],x[j],y[j])
     
-    if (distance < 200) {
+    if (distance < 25) {
       stroke(random(0,255),random(0,255),random(0,255),random(0,255))
       line(x[i],y[i],x[j],y[j])
-  //draws line between coordinates defined by i and coordinates defined by j
     }
     
-    if (distance < 200) {
+    if (distance2 < 50) {
       stroke(random(0,255),random(0,255),random(0,255),random(0,255))
       line(x[i2],y[i2],x[j],y[j])
-  //draws line between coordinates defined by i and coordinates defined by j
     }
-    
-    if (distance < 200) {
+      
+    if (distance3 < 100) {
       stroke(random(0,255),random(0,255),random(0,255),random(0,255))
       line(x[i3],y[i3],x[j],y[j])
+    }
   //draws line between coordinates defined by i and coordinates defined by j
     }
-  }
 }
